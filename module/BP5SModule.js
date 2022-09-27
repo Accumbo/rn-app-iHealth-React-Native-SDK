@@ -2,10 +2,9 @@
  * Created by chenxuewei on 04/05/2019.
  */
 
-'use strict';
+"use strict";
 
-
-var { NativeModules, Platform } = require('react-native');
+var { NativeModules, Platform } = require("react-native");
 
 var RCTModule = NativeModules.BP5SModule;
 
@@ -14,42 +13,51 @@ var RCTModule = NativeModules.BP5SModule;
  */
 
 module.exports = {
-
   Event_Notify: RCTModule.Event_Notify,
 
   startMeasure: (mac) => {
     if (RCTModule != null) {
       RCTModule.startMeasure(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
   stopMeasure: (mac) => {
     if (RCTModule != null) {
       RCTModule.stopMeasure(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
-
   },
 
   deleteData: (mac) => {
     if (RCTModule != null) {
       RCTModule.deleteData(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
   enbleOffline: (mac, mode) => {
     if (RCTModule != null) {
-        RCTModule.enbleOffline(mac, mode);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+      RCTModule.enbleOffline(mac, mode);
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
+  /**
+   * Enable device can connect anytime
+   * @param {string} mac Device's mac address
+   */
+  enableActiveBluetooth: (mac) => {
+    if (RCTModule != null) {
+      RCTModule.enableActiveBluetooth(mac);
+    } else {
+      console.log("~~~~~ RCTModule is null");
+    }
+  },
 
   /**
    * Get the BP7S device's battery.
@@ -58,8 +66,8 @@ module.exports = {
   getBattery: (mac) => {
     if (RCTModule != null) {
       RCTModule.getBattery(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
@@ -70,8 +78,8 @@ module.exports = {
   getOffLineNum: (mac) => {
     if (RCTModule != null) {
       RCTModule.getOffLineNum(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
@@ -82,8 +90,8 @@ module.exports = {
   getOffLineData: (mac) => {
     if (RCTModule != null) {
       RCTModule.getOffLineData(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
@@ -95,8 +103,8 @@ module.exports = {
   setUnit: (mac, unit) => {
     if (RCTModule != null) {
       RCTModule.setUnit(mac, unit);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
@@ -108,11 +116,10 @@ module.exports = {
   getFunctionInfo: (mac) => {
     if (RCTModule != null) {
       RCTModule.getFunctionInfo(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
-
 
   /**
    * Disconnect the BP5S
@@ -123,8 +130,8 @@ module.exports = {
   disconnect: (mac) => {
     if (RCTModule != null) {
       RCTModule.disconnect(mac);
-    }else {
-      console.log('~~~~~ RCTModule is null')
+    } else {
+      console.log("~~~~~ RCTModule is null");
     }
   },
 
@@ -134,6 +141,6 @@ module.exports = {
    * e.g. {"devices":["A4D5783FB00C","A4D5783FFE58"]}
    */
   getAllConnectedDevices: () => {
-    RCTModule.getAllConnectedDevices()
-  }
+    RCTModule.getAllConnectedDevices();
+  },
 };
