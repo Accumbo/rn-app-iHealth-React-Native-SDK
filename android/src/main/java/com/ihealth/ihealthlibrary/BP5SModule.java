@@ -105,6 +105,14 @@ public class BP5SModule extends iHealthBaseModule {
     }
 
     @ReactMethod
+    public void disableActiveBluetooth(String mac) {
+        Bp5sControl bp5sControl = getBp5sControl(mac);
+        if (bp5sControl != null) {
+            bp5sControl.setMode(BpProfile.STATUS_MODE_TO_B);
+        }
+    }
+
+    @ReactMethod
     public void deleteData(String mac) {
         Bp5sControl bp5sControl = getBp5sControl(mac);
         if (bp5sControl != null) {

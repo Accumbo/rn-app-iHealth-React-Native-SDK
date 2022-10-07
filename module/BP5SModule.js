@@ -60,6 +60,18 @@ module.exports = {
   },
 
   /**
+   * Enable device can connect anytime
+   * @param {string} mac Device's mac address
+   */
+  disableActiveBluetooth: (mac) => {
+    if (RCTModule != null) {
+      RCTModule.disableActiveBluetooth(mac);
+    } else {
+      console.log("~~~~~ RCTModule is null");
+    }
+  },
+
+  /**
    * Get the BP7S device's battery.
    * @param {string} mac Device's mac address
    */
