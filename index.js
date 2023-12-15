@@ -2,8 +2,8 @@
 
 var Component = {
     iHealthDeviceManagerModule: require('./module/iHealthDeviceManagerModule'),
-    BP5Module: require('./module/BP5Module'),
-    // BP5SModule: require('./module/BP5SModule'),
+    // BP5Module: require('./module/BP5Module'),
+    BP5SModule: require('./module/BP5SModule'),
     BP3LModule: require('./module/BP3LModule'),
     // BP550BTModule: require('./module/BP550BTModule'),
     // BP7Module: require('./module/BP7Module'),

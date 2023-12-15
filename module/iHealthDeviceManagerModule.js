@@ -22,8 +22,8 @@ module.exports = {
     // /**
     //  * Device type number for BP5(33554432) 1 << 25
     //  */
-    BP5: RCTModule.BP5,
-    // BP5S: RCTModule.BP5S,
+    // BP5: RCTModule.BP5,
+    BP5S: RCTModule.BP5S,
     // /**
     //  * Device type number for BP3L(32) 1 << 5
     //  */
