@@ -9,67 +9,67 @@ var RCTModule = NativeModules.iHealthDeviceManagerModule
  * @module iHealthDeviceManagerModule
  */
 module.exports = {
-    //Device Type
-    AM3S: RCTModule.AM3S,
-    /**
-     * Device type number for AM4(4) 1 << 2
-     */
-    AM4: RCTModule.AM4,
-    /**
-     * Device type number for PO3(8) 1 << 3
-     */
-    PO3: RCTModule.PO3,
-    /**
-     * Device type number for BP5(33554432) 1 << 25
-     */
+    // //Device Type
+    // AM3S: RCTModule.AM3S,
+    // /**
+    //  * Device type number for AM4(4) 1 << 2
+    //  */
+    // AM4: RCTModule.AM4,
+    // /**
+    //  * Device type number for PO3(8) 1 << 3
+    //  */
+    // PO3: RCTModule.PO3,
+    // /**
+    //  * Device type number for BP5(33554432) 1 << 25
+    //  */
     BP5: RCTModule.BP5,
-    BP5S: RCTModule.BP5S,
-    /**
-     * Device type number for BP3L(32) 1 << 5
-     */
+    // BP5S: RCTModule.BP5S,
+    // /**
+    //  * Device type number for BP3L(32) 1 << 5
+    //  */
     BP3L: RCTModule.BP3L,
-    /**
-     * Device type number for BP7S(16777216) 1 << 24
-     */
-    BP7: RCTModule.BP7,
-    BP7S: RCTModule.BP7S,
-    /**
-     * Device type number for Bp550BT(128) 1 << 7
-     */
-    KN550: RCTModule.KN550,
-    /**
-     * Device type number for HS2(131072) 1 << 17
-     */
-    HS2: RCTModule.HS2,
-    /**
-     * Device type number for HS4S(268435456) 1 << 28
-     */
-    HS4S: RCTModule.HS4S,
-    HS6: 10086,
-    /**
-     * Device type number for BG1(110)
-     */
-    BG1: RCTModule.BG1,
-    /**
-     * Device type number for BG5(4294967296) 1 << 32
-     */
-    BG5: RCTModule.BG5,
+    // /**
+    //  * Device type number for BP7S(16777216) 1 << 24
+    //  */
+    // BP7: RCTModule.BP7,
+    // BP7S: RCTModule.BP7S,
+    // /**
+    //  * Device type number for Bp550BT(128) 1 << 7
+    //  */
+    // KN550: RCTModule.KN550,
+    // /**
+    //  * Device type number for HS2(131072) 1 << 17
+    //  */
+    // HS2: RCTModule.HS2,
+    // /**
+    //  * Device type number for HS4S(268435456) 1 << 28
+    //  */
+    // HS4S: RCTModule.HS4S,
+    // HS6: 10086,
+    // /**
+    //  * Device type number for BG1(110)
+    //  */
+    // BG1: RCTModule.BG1,
+    // /**
+    //  * Device type number for BG5(4294967296) 1 << 32
+    //  */
+    // BG5: RCTModule.BG5,
 
-    BG5S: RCTModule.BG5S,
+    // BG5S: RCTModule.BG5S,
 
-    ECG3: RCTModule.ECG3,
+    // ECG3: RCTModule.ECG3,
 
-    ECG3USB: RCTModule.ECG3USB,
+    // ECG3USB: RCTModule.ECG3USB,
 
-    BTM: RCTModule.BTM,
+    // BTM: RCTModule.BTM,
 
-    TS28B: RCTModule.TS28B,
+    // TS28B: RCTModule.TS28B,
 
-    NT13B: RCTModule.NT13B,
+    // NT13B: RCTModule.NT13B,
 
-    HS2S: RCTModule.HS2S,
+    // HS2S: RCTModule.HS2S,
 
-    BG1S: RCTModule.BG1S,
+    // BG1S: RCTModule.BG1S,
 
     /**
      * Notify event type for scan device result.("event_scan_device")
