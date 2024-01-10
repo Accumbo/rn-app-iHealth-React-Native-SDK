@@ -38,7 +38,7 @@ RCT_EXPORT_MODULE()
     if (self=[super init])
     {
         
-        [BG1Controller shareBG1Controller];
+        //[BG1Controller shareBG1Controller];
         
     }
     return self;

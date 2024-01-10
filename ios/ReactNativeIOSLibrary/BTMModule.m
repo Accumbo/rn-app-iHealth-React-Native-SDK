@@ -44,7 +44,7 @@ RCT_EXPORT_MODULE()
     if (self=[super init])
     {
         
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reciveDeviceData:) name:@"THV3NewDataCome" object:nil];
+        //[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reciveDeviceData:) name:@"THV3NewDataCome" object:nil];
         
     }
     return self;

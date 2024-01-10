@@ -38,10 +38,10 @@ RCT_EXPORT_MODULE()
     if (self=[super init])
     {
         
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForAM4:) name:AM4ConnectNoti object:nil];
+        /*[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForAM4:) name:AM4ConnectNoti object:nil];
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForAM4:) name:AM4DisConnectNoti object:nil];
         
-        [AM4Controller shareIHAM4Controller];
+        [AM4Controller shareIHAM4Controller];*/
         
     }
     return self;

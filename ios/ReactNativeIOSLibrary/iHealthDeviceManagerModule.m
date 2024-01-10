@@ -138,6 +138,7 @@ RCT_EXPORT_MODULE()
 #pragma mark
 #pragma mark - Init
 -(id)init{
+    /*
     if (self = [super init]){
         
         [ScanDeviceController commandGetInstance];
@@ -285,6 +286,7 @@ RCT_EXPORT_MODULE()
         [PT3SBTController shareIHPT3SBTController];
         
     }
+ */
     return self;
 }
 
@@ -562,6 +564,154 @@ RCT_EXPORT_MODULE()
 }
 
 #pragma mark - Method
+
+RCT_EXPORT_METHOD(initializeSDK){
+        
+    [ScanDeviceController commandGetInstance];
+    // AM3S
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:AM3SDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:AM3SConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:AM3SConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:AM3SDisConnectNoti object:nil];
+    // AM4
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:AM4Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:AM4ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:AM4ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:AM4DisConnectNoti object:nil];
+    // PO3
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:PO3Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:PO3ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:PO3ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:PO3DisConnectNoti object:nil];
+    // BP5
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:BP5ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:BP5DisConnectNoti object:nil];
+    // BP7
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:BP7ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:BP7DisConnectNoti object:nil];
+    //BP3L
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:BP3LDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:BP3LConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:BP3LConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:BP3LDisConnectNoti object:nil];
+    
+    //BP5S
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:BP5SDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:BP5SConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:BP5SConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:BP5SDisConnectNoti object:nil];
+    
+    //BP7S
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:BP7SDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:BP7SConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:BP7SDisConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:BP7SConnectFailed object:nil];
+    
+    //KN550BT
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:KN550BTDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:KN550BTConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:KN550BTDisConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:KN550BTConnectFailed object:nil];
+    // HS4S
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:HS4Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:HS4ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:HS4ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:HS4DisConnectNoti object:nil];
+    // HS2
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:HS2Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:HS2ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:HS2ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:HS2DisConnectNoti object:nil];
+    
+    
+    // HS2S
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:HS2SDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:HS2SConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:HS2SConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:HS2SDisConnectNoti object:nil];
+    
+    //BG1
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bg1Discover:) name:kNotificationNameNeedAudioPermission object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bg1Connect:) name:kNotificationNameAudioDeviceInsert object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBG1Disconnect:) name:kNotificationNameBG1DidDisConnect object:nil];
+    //BG5
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:BG5ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:BG5DisConnectNoti object:nil];
+    
+    // BG5S
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:kNotificationNameBG5SDidDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:kNotificationNameBG5SConnectFail object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:kNotificationNameBG5SConnectSuccess object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:kNotificationNameBG5SDidDisConnect object:nil];
+    
+    //ECG3
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:ECG3Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:ECG3ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:ECG3ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:ECG3DisConnectNoti object:nil];
+    
+    //ECG3USB
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:ECGUSBConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:ECGUSBDisConnectNoti object:nil];
+    
+    //BTM(THV3)
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:THV3Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:THV3ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:THV3ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:THV3DisConnectNoti object:nil];
+    //NT13B
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:NT13BDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:NT13BConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:NT13BConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:NT13BDisConnectNoti object:nil];
+    
+    //TS28B
+    
+    
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(disconnectTS28B) name:@"disconnectTS28B" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getAllTS28BConnectedDevices) name:@"getAllTS28BConnectedDevices" object:nil];
+    
+    
+    //BG1S
+           
+           [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:BG1SDiscover object:nil];
+           [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:BG1SConnectFailed object:nil];
+           [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:BG1SConnectNoti object:nil];
+           [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:BG1SDisConnectNoti object:nil];
+    // PO1
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:PO1Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:PO1ConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:PO1ConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:PO1DisConnectNoti object:nil];
+    // PT3SBT
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDiscover:) name:PT3SBTDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnectFailed:) name:PT3SBTConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConnect:) name:PT3SBTConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceDisconnect:) name:PT3SBTDisConnectNoti object:nil];
+   
+    [AM3Controller shareIHAM3Controller];
+    [AM3SController_V2 shareIHAM3SController];
+    [AM4Controller shareIHAM4Controller];
+    [BP3LController shareBP3LController];
+    [BP5Controller shareBP5Controller];
+    [BP7Controller shareBP7Controller];
+    [BP5SController sharedController];
+    [BG5Controller shareIHBg5Controller];
+    [BG5SController sharedController];
+    [ECG3Controller shareECG3Controller];
+    [ECG3USBController shareECG3USBController];
+    [HS4Controller shareIHHs4Controller];
+    [HS2Controller shareIHHs2Controller];
+    [HS2SController shareIHHS2SController];
+    [THV3Controller sharedController];
+    [NT13BController shareIHNT13BController];
+    [BG1SController shareIHBG1SController];
+    [PO1Controller shareIHPO1Controller];
+    [PT3SBTController shareIHPT3SBTController];
+    
+}
 
 RCT_EXPORT_METHOD(sdkAuthWithLicense:(nonnull NSString *)license){
     

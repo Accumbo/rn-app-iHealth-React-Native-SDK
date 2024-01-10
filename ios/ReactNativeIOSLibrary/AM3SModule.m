@@ -36,10 +36,10 @@ RCT_EXPORT_MODULE()
     if (self=[super init])
     {
         
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForAM3S:) name:AM3SConnectNoti object:nil];
+        /*[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForAM3S:) name:AM3SConnectNoti object:nil];
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForAM3S:) name:AM3SDisConnectNoti object:nil];
         
-        [AM3SController_V2 shareIHAM3SController];
+        [AM3SController_V2 shareIHAM3SController];*/
         
     }
     return self;

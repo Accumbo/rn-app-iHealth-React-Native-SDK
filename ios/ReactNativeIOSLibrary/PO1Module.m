@@ -46,7 +46,7 @@ RCT_EXPORT_MODULE()
     if (self=[super init])
     {
        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(devicePO1Measure:) name:@"PO1NotificationMeasureData" object:nil];
+        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(devicePO1Measure:) name:@"PO1NotificationMeasureData" object:nil];
         
     }
     

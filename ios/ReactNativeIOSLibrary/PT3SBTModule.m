@@ -46,7 +46,7 @@ RCT_EXPORT_MODULE()
     if (self=[super init])
     {
        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(devicePT3SBTMeasure:) name:@"PT3SBTNotificationGetResult" object:nil];
+        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(devicePT3SBTMeasure:) name:@"PT3SBTNotificationGetResult" object:nil];
         
     }
     

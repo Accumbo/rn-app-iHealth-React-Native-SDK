@@ -49,10 +49,10 @@ RCT_EXPORT_MODULE()
 -(id)init{
     self = [super init];
     if (self) {
-        [BG5Controller shareIHBg5Controller];
+        /*[BG5Controller shareIHBg5Controller];
         self.deviceSelectedOpenMode = 0;// 初始化时，将开机模式设置为0；目的是，在用户调用开始测量方法时，判断用户是否已经调用过发码方法。调用过发码方法后，openMode的值是1或2
         self.userSelectedMeasureMode = 0;// 初始化时，将开机模式设置为0；目的是，在用户调用开始测量方法时，判断用户发码时传入的测量模式 是否等于 开始测量传入的测量模式
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clear) name:BG5DisConnectNoti object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clear) name:BG5DisConnectNoti object:nil];*/
     }
     return self;
 }

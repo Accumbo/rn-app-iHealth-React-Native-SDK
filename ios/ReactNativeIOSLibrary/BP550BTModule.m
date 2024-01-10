@@ -41,7 +41,7 @@ RCT_EXPORT_MODULE()
 //        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForKN550BT:) name:KN550BTConnectNoti object:nil];
 //        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForKN550BT:) name:KN550BTDisConnectNoti object:nil];
         
-        [KN550BTController shareKN550BTController];
+        //[KN550BTController shareKN550BTController];
         
     }
     return self;
